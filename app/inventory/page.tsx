@@ -43,7 +43,7 @@ export default function Inventory() {
   const [stockFilter, setStockFilter] = useState("All Stock");
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
   const [showModal, setShowModal] = useState(false);
-  const [editing, setEditing] = useState<TheDukaanProduct | null>(null);
+  const [editing, setEditing] = useState<InventoryProduct | null>(null);
   const [form, setForm] = useState<ProductForm>(emptyForm);
   const [alternateInput, setAlternateInput] = useState("");
   const [alternateInputs, setAlternateInputs] = useState<Record<string, string>>({});
@@ -103,7 +103,7 @@ export default function Inventory() {
     setShowModal(true);
   }
 
-  function openEdit(product: TheDukaanProduct) {
+  function openEdit(product: InventoryProduct) {
     setEditing(product);
     setForm({
       brand: product.brand,
